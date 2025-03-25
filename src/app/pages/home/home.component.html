@@ -1,0 +1,26 @@
+<h2 class="person-title">Person Details</h2>
+
+<div *ngIf="persons.length > 0; else noData">
+  <table class="person-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of persons">
+        <td>{{ person.name }}</td>
+        <td>{{ person.address }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phoneNumber }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noData>
+  <p class="no-data">No persons added yet.</p>
+</ng-template>
